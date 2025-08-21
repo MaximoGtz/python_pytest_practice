@@ -6,7 +6,12 @@ MARKERS
     -una sola prueba puede tener N cantidad de marcadores
 si le agregamos el parámetro -m de "marker" seguido de el nombre del marker se ejecutan solo esas que estén marcadas
 ejemplo :
+
 pytest -v -m api
+-v la hace mas comprensible y visible en terminal
+-m para agregar el marcador
+-m 'not api' es para poner lo contrario y traiga todas menos api
+
 ============================== test session starts ===============================
 platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/maximo/PythonBasicsPractice/.venv/bin/python3
 cachedir: .pytest_cache
@@ -27,3 +32,14 @@ def test_prueba01():
 
 para seleccionar las pruebas a excepción de cierto marcador es de la siguiente forma
 pytest -v -m 'not api'
+
+
+REPORTES:
+para generar un html con la librería que hemos descargado sería
+
+esto genera un reporte de todas las pruebas de nuestra aplicación
+pytest --html=report1.html
+
+tambien le podemos meter mas parámetros para específicar como queremos el html por ejemplo:
+
+
