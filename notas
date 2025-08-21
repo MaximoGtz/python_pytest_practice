@@ -1,0 +1,29 @@
+el comando "pytest" ejecuta todas las pruebas tomando en cuenta a pytest.ini para la ejecución
+
+si ponemos pytest -v nos muestra a detalle todas las pruebas
+
+MARKERS
+    -una sola prueba puede tener N cantidad de marcadores
+si le agregamos el parámetro -m de "marker" seguido de el nombre del marker se ejecutan solo esas que estén marcadas
+ejemplo :
+pytest -v -m api
+============================== test session starts ===============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/maximo/PythonBasicsPractice/.venv/bin/python3
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.3', 'Platform': 'Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39', 'Packages': {'pytest': '8.4.1', 'pluggy': '1.6.0'}, 'Plugins': {'metadata': '3.1.1', 'html': '4.1.1', 'slack': '2.3.1'}}
+rootdir: /home/maximo/PythonBasicsPractice
+configfile: pytest.ini
+plugins: metadata-3.1.1, html-4.1.1, slack-2.3.1
+collected 7 items / 6 deselected / 1 selected
+
+test_main.py::test_prueba02 PASSED                                         [100%]
+
+======================== 1 passed, 6 deselected in 0.01s =========================
+
+En la prueba:
+@mark.api
+def test_prueba01():
+    assert
+
+para seleccionar las pruebas a excepción de cierto marcador es de la siguiente forma
+pytest -v -m 'not api'
